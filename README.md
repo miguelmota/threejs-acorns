@@ -1,4 +1,4 @@
-# Three.js Acorns
+# three.js Acorns
 
 [Acorns app](https://acorns.com) logo rendered with [three.js](http://threejs.org/).
 
