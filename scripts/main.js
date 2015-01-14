@@ -145,6 +145,7 @@ camera.position.set(0,60,50);
 scene.add(buildAxes(1000));
 
 var rotSpeed = 0.01;
+var autopan = true;
 
 // STATS
 var stats = new Stats();
@@ -163,13 +164,19 @@ function render() {
       y = camera.position.y,
       z = camera.position.z;
 
-  camera.position.x = x * Math.cos(rotSpeed) + z * Math.sin(rotSpeed);
-  camera.position.y = y * Math.cos(rotSpeed) + z * Math.sin(rotSpeed);
-  camera.position.z = z * Math.cos(rotSpeed) - x * Math.sin(rotSpeed);
+  if (autopan) {
+    camera.position.x = x * Math.cos(rotSpeed) + z * Math.sin(rotSpeed);
+    camera.position.y = y * Math.cos(rotSpeed) + z * Math.sin(rotSpeed);
+    camera.position.z = z * Math.cos(rotSpeed) - x * Math.sin(rotSpeed);
+  }
   camera.lookAt(scene.position);
   renderer.render(scene, camera);
   controls.update();
   requestAnimationFrame(render);
 }
+
+renderer.domElement.addEventListener('mousedown', function() {
+  autopan = false;
+}, false);
 
 render();
