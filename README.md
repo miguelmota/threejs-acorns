@@ -6,7 +6,7 @@
 
 # Demo
 
-[http://lab.moogs.io/threejs-acorns](http://lab.moogs.io/threejs-acorns)
+[https://lab.miguelmota.com/threejs-acorns](https://lab.miguelmota.com/threejs-acorns)
 
 # License
 
